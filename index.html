@@ -1,9 +1,20 @@
 <html>
+  <script src="jquery-3.4.1.js"></script>
   <body>
-  <h1>我叫ker.</h1>
-      <p>我的学号是<span id="studentnumber">623965864</span>
+  <h1>我叫<span id="myname"></span></h1>
+      <p>我的学号是<span id="mynumber"></span>
       </p>
       <img src="matrix.png"/>
       <img id="logo" src="u=2174909441,2495215020&fm=26&gp=0.jpg" style="border-radius: 10px 20px 30px 40px"/>
-  </body>
+      <script>
+        $(function(){
+          $.get("./data.json",function(result){
+            $("#myname").text(result.myname);
+            $("#mynumber").text(result.mymumber);
+          });
+        })
+      </script>
+  
+  
+    </body>
 </html>
